@@ -44,7 +44,7 @@ const App: Component = () => {
     indifference: 0,
   })
 
-  const [step, setStep] = createSignal(0)
+  const [step, setStep] = createSignal(8)
 
   const handleScroll = throttle(() => {
     setScrollTop(window.scrollY)

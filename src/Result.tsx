@@ -11,24 +11,37 @@ const Result: Component<Pick<StepProps, 'step' | 'currentStep'>> = ({
   step,
   currentStep,
 }) => {
+  let title: HTMLDivElement | undefined
   let video: HTMLVideoElement | undefined
 
   createEffect(() => {
+    const delay = Math.floor(Math.random() * (10 - 5 + 1) + 5)
+
     if (step === currentStep()) {
       setTimeout(() => {
-        if (!video) return
+        if (!video || !title) return
 
-        video.style.opacity = '1'
+        title.classList.add(styles.exit)
 
         setTimeout(() => {
-          video?.play()
-        }, 1000)
-      }, DURATION)
+          if (!video) return
+
+          video.style.display = 'block'
+          video.style.opacity = '1'
+
+          setTimeout(() => {
+            video?.play()
+          }, 1000)
+        }, 600)
+      }, DURATION + delay * 1000)
     }
   })
 
   return (
     <div>
+      <h2 class={styles.title} ref={title}>
+        Wait a bit, visualising...
+      </h2>
       <video
         class={styles.video}
         src={result}
