@@ -15,15 +15,15 @@ import cutTree from './cut-tree.png'
 import styles from './ColorPicker.module.css'
 
 const colors = [
-  [strawberry, 'E57373', 'red'],
-  [purpleBear, 'BA68C8', 'purple'],
-  [blueGem, '7986CB', 'dark blue'],
-  [lightBlueInstax, '4FC3F7', 'light blue'],
-  [greenLizard, '4DB6AC', 'dark green'],
-  [greenFish, 'AED581', 'light green'],
-  [orange, 'FFF176', 'orange'],
-  [cutTree, 'A1887F', 'brown'],
-  [smallRocks, '90A4AE', 'gray'],
+  [strawberry, 'FFCDD2', 'red'],
+  [purpleBear, 'E1BEE7', 'purple'],
+  [blueGem, 'BBDEFB', 'dark blue'],
+  [lightBlueInstax, 'B3E5FC', 'light blue'],
+  [greenLizard, 'C8E6C9', 'dark green'],
+  [greenFish, 'DCEDC8', 'light green'],
+  [orange, 'FFE0B2', 'orange'],
+  [cutTree, 'D7CCC8', 'brown'],
+  [smallRocks, 'E0E0E0', 'gray'],
 ]
 
 const ColorPicker: Component<Pick<StepProps, 'onPick'>> = ({ onPick }) => {
