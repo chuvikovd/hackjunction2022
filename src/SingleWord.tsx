@@ -20,7 +20,7 @@ const SingleWord: Component<StepProps> = ({ step, currentStep, next }) => {
   })
 
   const onKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Enter') next()
+    if (e.key === 'Enter') next({ prompt: value() });
   }
 
   const onChange = (e: Event & { currentTarget: HTMLInputElement; target: Element }) => {

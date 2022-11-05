@@ -35,6 +35,19 @@ const ColorPicker: Component<Pick<StepProps, 'next'>> = ({ next }) => {
     page.style.backgroundColor = ''
   }
 
+  const onClick = (event) => {
+    const value = event.target.style.backgroundColor
+      .match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/)
+      .slice(1);
+
+    const rgb = {
+      r: value[0],
+      g: value[1],
+      b: value[2]
+    }
+    next({ colorOption: rgb });
+  };
+
   return (
     <div>
       <h2 class={styles.title}>Pick a most appropriate color for your mood</h2>
@@ -49,7 +62,7 @@ const ColorPicker: Component<Pick<StepProps, 'next'>> = ({ next }) => {
             }}
             onMouseEnter={() => onMouseEnter(background)}
             onMouseLeave={onMouseLeave}
-            onClick={next}
+            onClick={onClick}
           />
         ))}
       </div>

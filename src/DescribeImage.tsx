@@ -15,7 +15,7 @@ const DescribeImage: Component<DescribeImageProps> = ({ next, phrases }) => {
       <h2 class={styles.title}>Look at this picture</h2>
       <img src="https://via.placeholder.com/150x150" alt="" class={styles.image} />
       <h2 class={styles.subtitle}>Select a phrase, which, in your opinion, describes this image better</h2>
-      <Cloud phrases={phrases} onPick={() => next()} />
+      <Cloud phrases={phrases} onPick={(phrase) => next( { imagePhraseOption: phrase } )} />
     </div>
   )
 }

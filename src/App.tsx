@@ -13,13 +13,28 @@ import styles from './App.module.css';
 export type StepProps = {
   step: number
   currentStep: Accessor<number>
-  next: () => void
+  next: (input: IData) => void
+}
+
+interface IData {
+  imageOption?: number;
+  colorOption?: { r: number; g: number; b: number; };
+  prompt?: string;
+  phraseOption?: string;
+  imagePhraseOption?: string;
 }
 
 const App: Component = () => {
   let root: HTMLDivElement | undefined
   const [scrollTop, setScrollTop] = createSignal(0);
   const [pos, setPos] = createSignal({ x: 0, y: 0 });
+  const [data, setData] = createSignal({
+    imageOption: -1,
+    colorOption: { r: 0, g: 0, b: 0 },
+    prompt: '',
+    phraseOption: '',
+    imagePhraseOption: '',
+  });
 
   const [step, setStep] = createSignal(0)
 
@@ -40,7 +55,11 @@ const App: Component = () => {
     });
   }
 
-  const next = () => setStep(step => step + 1)
+  const next = (input: IData) => {
+    setStep(step => step + 1);
+    setData(data => ({ ...data, ...input }));
+    console.log(data());
+  };
 
   return (
     <div

@@ -9,11 +9,18 @@ type ImageGridProps = Pick<StepProps, 'next'> & {
 }
 
 const ImageGrid: Component<ImageGridProps> = ({ next, images }) => {
+  const onClick = (event) => {
+    const value = event.target.attributes.getNamedItem('data-value').value;
+    next({
+      imageOption: parseInt(value)
+    });
+  }
+
   return (
     <div>
       <h2 class={styles.title}>What image do you like more?</h2>
       <div class={styles.images}>
-        {images.map((src) => <img src={src} alt="" class={styles.image} onClick={next} />)}
+        {images.map((src, index) => <img src={src} data-value={index} alt="" class={styles.image} onClick={onClick} />)}
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ const PickPhrase: Component<PickPhraseProps> = ({ next, phrases }) => {
   return (
     <div>
       <h2 class={styles.title}>Pick a phrase you like the most</h2>
-      <Cloud phrases={phrases} onPick={() => next()} />
+      <Cloud phrases={phrases} onPick={(phrase) => next({ phraseOption: phrase })} />
     </div>
   )
 }
