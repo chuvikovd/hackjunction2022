@@ -40,7 +40,7 @@ const Result: Component<Pick<StepProps, 'step' | 'currentStep'>> = ({
   return (
     <div>
       <h2 class={styles.title} ref={title}>
-        Wait a bit, visualising...
+        Wait a bit, creating fingerprint...
       </h2>
       <video
         class={styles.video}
