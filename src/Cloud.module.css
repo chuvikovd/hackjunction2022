@@ -1,15 +1,17 @@
 .root {
   display: inline-grid;
   gap: calc(var(--index) * 2.5);
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-auto-rows: auto;
   justify-items: center;
 }
 
 .phrase {
-  --transform: translate(calc(var(--translate-x-ratio) * var(--x-position) * 0.03), calc(var(--translate-y-ratio) * var(--y-position) * 0.03));
-  width: calc(var(--index) * 15);
-  transition: transform ease-out .5s, border-radius ease-in .3s;
+  --transform: translate(
+    calc(var(--translate-x-ratio) * var(--x-position) * 0.05),
+    calc(var(--translate-y-ratio) * var(--y-position) * 0.05)
+  );
+  transition: transform ease-out 0.5s, border-radius ease-in 0.3s;
   transform: var(--transform);
   will-change: transform;
   border-radius: calc(var(--index) * 3);
@@ -17,6 +19,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .phrase:hover {

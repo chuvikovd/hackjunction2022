@@ -1,19 +1,30 @@
-import { Component } from "solid-js";
+import { Component } from 'solid-js'
 
-import { StepProps } from "./App";
-import Cloud from "./Cloud"
+import { StepProps } from './App'
+import Cloud from './Cloud'
 
-import styles from "./PickPhrase.module.css"
+import styles from './PickPhrase.module.css'
 
-type PickPhraseProps = Pick<StepProps, 'next'> & {
+type PickPhraseProps = Pick<StepProps, 'onPick'> & {
+  title: string
+  columns: number
   phrases: string[]
 }
 
-const PickPhrase: Component<PickPhraseProps> = ({ next, phrases }) => {
+const PickPhrase: Component<PickPhraseProps> = ({
+  onPick,
+  title,
+  phrases,
+  columns,
+}) => {
   return (
     <div>
-      <h2 class={styles.title}>Pick a phrase you like the most</h2>
-      <Cloud phrases={phrases} onPick={(phrase) => next({ phraseOption: phrase })} />
+      <h2 class={styles.title}>{title}</h2>
+      <Cloud
+        phrases={phrases}
+        onPick={(phrase) => onPick(phrase)}
+        columns={columns}
+      />
     </div>
   )
 }

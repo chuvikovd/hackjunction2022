@@ -9,14 +9,14 @@
   display: inline-grid;
   gap: calc(var(--index) * 3);
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-auto-rows: auto;
   justify-items: center;
 }
 
 .image {
   width: calc(var(--index) * 15);
   height: calc(var(--index) * 15);
-  transition: transform ease-out .2s;
+  transition: transform ease-out 0.2s;
   will-change: transform;
   cursor: pointer;
 }

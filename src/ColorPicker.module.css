@@ -14,10 +14,13 @@
 }
 
 .color {
-  --transform: translate(calc(var(--translate-x-ratio) * var(--x-position) * 0.03), calc(var(--translate-y-ratio) * var(--y-position) * 0.03));
+  --transform: translate(
+    calc(var(--translate-x-ratio) * var(--x-position) * 0.03),
+    calc(var(--translate-y-ratio) * var(--y-position) * 0.03)
+  );
   width: calc(var(--index) * 10);
   height: auto;
-  transition: transform ease-out .5s;
+  transition: transform ease-out 0.5s;
   transform: var(--transform);
   will-change: transform;
   cursor: pointer;
