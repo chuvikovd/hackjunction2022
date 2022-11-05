@@ -1,0 +1,27 @@
+.title {
+  font-size: calc(var(--index) * 6);
+  font-weight: 800;
+  z-index: 10;
+  position: relative;
+}
+
+.colors {
+  display: inline-grid;
+  gap: calc(var(--index) * 2.5);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.color {
+  --transform: translate(calc(var(--translate-x-ratio) * var(--x-position) * 0.03), calc(var(--translate-y-ratio) * var(--y-position) * 0.03));
+  width: calc(var(--index) * 15);
+  height: calc(var(--index) * 15);
+  transition: transform ease-out .5s;
+  transform: var(--transform);
+  will-change: transform;
+}
+
+.color:hover {
+  transform: var(--transform) scale(1.1);
+}

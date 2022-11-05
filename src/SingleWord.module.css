@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.title {
+  font-size: calc(var(--index) * 4);
+  font-weight: 800;
+  margin-bottom: calc(var(--index) * 4);
+  line-height: 1;
+}
+
+.input {
+  appearance: none;
+  border: none;
+  border-bottom: 5px solid #171717;
+  background: none;
+  text-align: center;
+  font-size: calc(var(--index) * 3);
+  font-weight: 800;
+}
+
+.input:focus {
+  outline: none;
+}

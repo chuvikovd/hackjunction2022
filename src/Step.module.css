@@ -1,0 +1,4 @@
+.root {
+  padding: calc(var(--index) * 5) 0 calc(var(--index) * 10);
+  display: none;
+}
