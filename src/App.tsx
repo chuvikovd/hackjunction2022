@@ -8,11 +8,10 @@ import {
 import throttle from 'lodash/throttle'
 
 import Step from './Step'
-// import ImageGrid from './ImageGrid'
 import ColorPicker from './ColorPicker'
-// import SingleWord from './SingleWord';
 import PickPhrase from './PickPhrase'
 import DescribeImage from './DescribeImage'
+import Result from './Result'
 
 import img1 from './img1.jpg'
 import img2 from './img2.jpg'
@@ -341,6 +340,9 @@ const App: Component = () => {
             ]}
             columns={3}
           />
+        </Step>
+        <Step step={9} currentStep={step}>
+          <Result step={9} currentStep={step} />
         </Step>
       </div>
     </div>

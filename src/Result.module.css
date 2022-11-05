@@ -1,0 +1,12 @@
+.root {
+}
+
+.video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  margin: calc(var(--index) * -3) calc(var(--index) * -2)
+    calc(var(--index) * -5);
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
