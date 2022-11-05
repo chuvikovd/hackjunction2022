@@ -1,4 +1,4 @@
-const DURATION = 800
+export const DURATION = 800
 
 export default function scrollToTarget(target: HTMLElement, callback?: () => void) {
   const top = target.getBoundingClientRect().top;

@@ -4,9 +4,10 @@ import throttle from 'lodash/throttle'
 import Step from './Step'
 import ImageGrid from './ImageGrid'
 import ColorPicker from './ColorPicker';
+import SingleWord from './SingleWord';
+import Cloud from './Cloud';
 
 import styles from './App.module.css';
-import SingleWord from './SingleWord';
 
 export type StepProps = {
   step: number
@@ -60,7 +61,17 @@ const App: Component = () => {
           <ColorPicker next={next} />
         </Step>
         <Step step={2} currentStep={step}>
-          <SingleWord next={next} />
+          <SingleWord step={2} currentStep={step} next={next} />
+        </Step>
+        <Step step={3} currentStep={step}>
+          <Cloud next={next} phrases={[
+            'zalupa betona 1',
+            'lorem ipsum',
+            'dyorka zhopy',
+            'hevosenpaan how are you today my dear chatbot',
+            'Zirga galva top 1 podjezda',
+            'laksdjfasdkljfsad sadfksadnfs fasdf'
+          ]} />
         </Step>
       </div>
     </div>

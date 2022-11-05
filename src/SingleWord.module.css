@@ -9,16 +9,18 @@
   font-weight: 800;
   margin-bottom: calc(var(--index) * 4);
   line-height: 1;
+  text-transform: uppercase;
 }
 
 .input {
   appearance: none;
   border: none;
-  border-bottom: 5px solid #171717;
+  border-bottom: 5px solid #bbbbbb;
   background: none;
   text-align: center;
-  font-size: calc(var(--index) * 3);
+  font-size: calc(var(--index) * 7);
   font-weight: 800;
+  padding: calc(var(--index) * 1);
 }
 
 .input:focus {

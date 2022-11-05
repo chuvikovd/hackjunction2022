@@ -39,12 +39,12 @@ const ColorPicker: Component<Pick<StepProps, 'next'>> = ({ next }) => {
     <div>
       <h2 class={styles.title}>Pick a most appropriate color for your mood</h2>
       <div class={styles.colors}>
-        {colors.map(([foreground, background]) => (
+        {colors.map(([foreground, background], index) => (
           <div
             class={styles.color}
             style={{
-              "--translate-x-ratio": Math.random() * (Math.random() < 0.5 ? -1 : 1),
-              "--translate-y-ratio": Math.random() * (Math.random() < 0.5 ? -1 : 1),
+              "--translate-x-ratio": Math.random() * (index % 2 ? -1 : 1),
+              "--translate-y-ratio": Math.random() * (index % 2 < 0.5 ? -1 : 1),
               "background-color": `#${foreground}`,
             }}
             onMouseEnter={() => onMouseEnter(background)}
