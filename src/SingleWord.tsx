@@ -27,10 +27,16 @@ const SingleWord: Component<StepProps> = ({ step, currentStep, next }) => {
     setValue((e.target as HTMLInputElement).value)
   }
 
+  const onBlur = () => {
+    if (step === currentStep()) {
+      requestAnimationFrame(() => input?.focus())
+    }
+  }
+
   return (
     <div class={styles.root}>
       <h2 class={styles.title}>Write exactly one word, any you want</h2>
-      <input type="text" class={styles.input} ref={input} value={value()} onChange={onChange} onKeyDown={onKeyDown} />
+      <input type="text" class={styles.input} ref={input} value={value()} onChange={onChange} onKeyDown={onKeyDown} onBlur={onBlur} />
     </div>
   )
 }

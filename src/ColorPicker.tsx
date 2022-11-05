@@ -2,15 +2,22 @@ import { Component, onMount } from "solid-js";
 
 import { StepProps } from "./App";
 
+import strawberry from './strawberry.png'
+import purpleBear from './purple-bear.png'
+import blueGem from './blue-gem.png'
+import lightBlueInstax from './light-blue-instax.png'
+import greenLizard from './green-lizard.png'
+import greenFish from './green-fish.png'
+
 import styles from "./ColorPicker.module.css"
 
 const colors = [
-  ['C62828', 'E57373'],
-  ['6A1B9A', 'BA68C8'],
-  ['283593', '7986CB'],
-  ['0277BD', '4FC3F7'],
-  ['00695C', '4DB6AC'],
-  ['558B2F', 'AED581'],
+  [strawberry, 'E57373'],
+  [purpleBear, 'BA68C8'],
+  [blueGem, '7986CB'],
+  [lightBlueInstax, '4FC3F7'],
+  [greenLizard, '4DB6AC'],
+  [greenFish, 'AED581'],
   ['F9A825', 'FFF176'],
   ['4E342E', 'A1887F'],
   ['37474F', '90A4AE'],
@@ -52,13 +59,13 @@ const ColorPicker: Component<Pick<StepProps, 'next'>> = ({ next }) => {
     <div>
       <h2 class={styles.title}>Pick a most appropriate color for your mood</h2>
       <div class={styles.colors}>
-        {colors.map(([foreground, background], index) => (
-          <div
+        {colors.map(([src, background], index) => (
+          <img
+            src={src}
             class={styles.color}
             style={{
               "--translate-x-ratio": Math.random() * (index % 2 ? -1 : 1),
               "--translate-y-ratio": Math.random() * (index % 2 < 0.5 ? -1 : 1),
-              "background-color": `#${foreground}`,
             }}
             onMouseEnter={() => onMouseEnter(background)}
             onMouseLeave={onMouseLeave}

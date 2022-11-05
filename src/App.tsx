@@ -58,7 +58,6 @@ const App: Component = () => {
   const next = (input: IData) => {
     setStep(step => step + 1);
     setData(data => ({ ...data, ...input }));
-    console.log(data());
   };
 
   return (
