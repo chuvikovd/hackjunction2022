@@ -8,6 +8,9 @@ import blueGem from './blue-gem.png'
 import lightBlueInstax from './light-blue-instax.png'
 import greenLizard from './green-lizard.png'
 import greenFish from './green-fish.png'
+import smallRocks from './small-rocks.png';
+import orange from './orange.png';
+import cutTree from './cut-tree.png';
 
 import styles from "./ColorPicker.module.css"
 
@@ -18,9 +21,9 @@ const colors = [
   [lightBlueInstax, '4FC3F7'],
   [greenLizard, '4DB6AC'],
   [greenFish, 'AED581'],
-  ['F9A825', 'FFF176'],
-  ['4E342E', 'A1887F'],
-  ['37474F', '90A4AE'],
+  [orange, 'FFF176'],
+  [cutTree, 'A1887F'],
+  [smallRocks, '90A4AE'],
 ]
 
 const ColorPicker: Component<Pick<StepProps, 'next'>> = ({ next }) => {
