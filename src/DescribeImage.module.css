@@ -1,0 +1,16 @@
+.title {
+  font-size: calc(var(--index) * 7);
+  font-weight: 800;
+}
+
+.subtitle {
+  font-size: calc(var(--index) * 5);
+  font-weight: 600;
+  margin-bottom: calc(var(--index) * 5);
+}
+
+.image {
+  width: calc(var(--index) * 30);
+  height: calc(var(--index) * 30);
+  margin: calc(var(--index) * 7) auto;
+}

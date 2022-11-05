@@ -18,6 +18,7 @@
   height: calc(var(--index) * 15);
   transition: transform ease-out .2s;
   will-change: transform;
+  cursor: pointer;
 }
 
 .image:nth-child(1),

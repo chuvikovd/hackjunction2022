@@ -5,7 +5,8 @@ import Step from './Step'
 import ImageGrid from './ImageGrid'
 import ColorPicker from './ColorPicker';
 import SingleWord from './SingleWord';
-import Cloud from './Cloud';
+import PickPhrase from './PickPhrase';
+import DescribeImage from './DescribeImage';
 
 import styles from './App.module.css';
 
@@ -64,7 +65,17 @@ const App: Component = () => {
           <SingleWord step={2} currentStep={step} next={next} />
         </Step>
         <Step step={3} currentStep={step}>
-          <Cloud next={next} phrases={[
+          <PickPhrase next={next} phrases={[
+            'zalupa betona 1',
+            'lorem ipsum',
+            'dyorka zhopy',
+            'hevosenpaan how are you today my dear chatbot',
+            'Zirga galva top 1 podjezda',
+            'laksdjfasdkljfsad sadfksadnfs fasdf'
+          ]} />
+        </Step>
+        <Step step={4} currentStep={step}>
+          <DescribeImage next={next} phrases={[
             'zalupa betona 1',
             'lorem ipsum',
             'dyorka zhopy',
