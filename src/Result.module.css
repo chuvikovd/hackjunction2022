@@ -5,10 +5,15 @@
   animation-delay: 0.8s;
   position: relative;
   z-index: 10;
+  transition: color .2s ease;
 }
 
 .exit {
   animation: text-blur-out 0.6s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.white {
+  color: rgb(218, 213, 194);
 }
 
 .video {
